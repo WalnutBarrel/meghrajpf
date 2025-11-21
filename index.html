@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meghraj | Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- Particle Background Canvas -->
+<canvas id="particles"></canvas>
+
+<!-- Sidebar Navigation -->
+<nav class="sidebar">
+    <h2 class="logo">MR</h2>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#tech">Technologies</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <!-- Dark/Light toggle -->
+    <div class="toggle-container">
+        <input type="checkbox" id="themeToggle" />
+        <label for="themeToggle" class="toggle"></label>
+    </div>
+</nav>
+
+<!-- Main Content -->
+<section class="main">
+
+    <!-- HOME -->
+    <section id="home" class="section home">
+        <h1>Welcome to my Portfolio!</h1>
+        <img src="./images/img1.jpg" alt="Meghraj" class="profile-img" />
+
+        <h3 class="typing">
+            <span id="typingText"></span>
+            <span class="cursor">|</span>
+        </h3>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section about">
+        <h2>About Me</h2>
+
+        <div class="roadmap">
+            <div class="step"><span>2019</span> HTML, CSS</div>
+            <div class="step"><span>2021</span> JavaScript</div>
+            <div class="step"><span>2022</span> ReactJS</div>
+            <div class="step"><span>2023</span> NodeJS</div>
+            <div class="step"><span>2024</span> SQL Database</div>
+            <div class="step"><span>2025</span> Going On...</div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section projects">
+        <h2>Projects</h2>
+
+        <div class="project-list">
+            <div class="project-box">Restaurant Website</div>
+            <div class="project-box">Omne Hospital Website</div>
+            <div class="project-box">Education Institute Website</div>
+            <div class="project-box">More Projects...</div>
+        </div>
+    </section>
+
+    <!-- TECHNOLOGIES -->
+    <section id="tech" class="section tech">
+        <h2>Technologies</h2>
+
+        <div class="tech-grid">
+            <div class="tech-card"><img src="./images/py.jpg"> PYTHON</div>
+            <div class="tech-card"><img src="icons/css.png"> CSS</div>
+            <div class="tech-card"><img src="icons/js.png"> JavaScript</div>
+            <div class="tech-card"><img src="./images/react.png"> ReactJS</div>
+            <div class="tech-card"><img src="./images/py.jpg"> NodeJS</div>
+            <div class="tech-card"><img src="./images/py.jpg"> SQL</div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact">
+        <h2>Contact Me</h2>
+        <a href="YOUR_GOOGLE_FORM_LINK" target="_blank" class="contact-btn">
+            Open Contact Form
+        </a>
+    </section>
+
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
