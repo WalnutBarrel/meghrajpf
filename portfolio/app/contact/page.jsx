@@ -12,10 +12,10 @@ export default function ContactPage() {
     setStatus("Sending...");
 
     emailjs.sendForm(
-      "YOUR_SERVICE_ID",      // <-- replace
-      "YOUR_TEMPLATE_ID",     // <-- replace
+      "service_y8wumaj",      // <-- replace
+      "template_k42rjxf",     // <-- replace
       e.target, 
-      "YOUR_PUBLIC_KEY"       // <-- replace
+      "gA0DPDw4nIKsemMCR"       // <-- replace
     )
     .then(() => {
       setStatus("Message sent! I’ll reply soon 🚀");
