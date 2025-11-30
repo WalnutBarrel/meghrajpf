@@ -1,108 +1,60 @@
 "use client";
+
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, User, MessageSquare } from "lucide-react";
+import emailjs from "emailjs-com";
 
 export default function ContactPage() {
   const [status, setStatus] = useState("");
 
-  const handleSubmit = (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
     setStatus("Sending...");
 
-    setTimeout(() => {
-      setStatus("Message sent successfully! 🚀 I will reach you soon.");
-    }, 1000);
+    emailjs.sendForm(
+      "YOUR_SERVICE_ID",      // <-- replace
+      "YOUR_TEMPLATE_ID",     // <-- replace
+      e.target, 
+      "YOUR_PUBLIC_KEY"       // <-- replace
+    )
+    .then(() => {
+      setStatus("Message sent! I’ll reply soon 🚀");
+      e.target.reset(); // clear form
+    })
+    .catch(() => setStatus("Error sending message ❌"));
   };
 
   return (
-    <main className="pt-28 pb-20 max-w-3xl mx-auto px-6">
-
-      {/* Header */}
+    <section className="mt-4 max-w-3xl mx-auto text-center">
       <motion.h1
-        initial={{ opacity: 0, y: 15 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4 }}
-        className="text-4xl md:text-5xl font-semibold text-center"
-      >
-        Let's Build Something{" "}
-        <span className="text-primary">Meaningful</span>
-      </motion.h1>
-
-      <motion.p
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4, delay: 0.1 }}
-        className="mt-3 text-center text-zinc-400 text-[15px]"
-      >
-        Whether it’s a product idea, collaboration or problem to solve — 
-        don’t hesitate to reach out.
-      </motion.p>
-
-      {/* Contact Form */}
-      <motion.form
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2, duration: 0.5 }}
-        onSubmit={handleSubmit}
-        className="glass rounded-3xl p-8 mt-12 space-y-5 border border-white/10 shadow-[0_0_25px_#00eaff10]"
+        className="text-4xl font-display mb-3"
       >
-        {/* Name */}
-        <div className="relative">
-          <User className="absolute left-4 top-3 text-zinc-500 h-5 w-5" />
-          <input
-            type="text"
-            placeholder="Your Name"
-            required
-            className="w-full bg-white/5 pl-12 py-3 border border-white/10 rounded-lg 
-                       text-sm placeholder:text-zinc-500 focus:border-primary outline-none transition"
-          />
-        </div>
+        Let’s Build Something <span className="text-primary">Impactful</span>
+      </motion.h1>
 
-        {/* Email */}
-        <div className="relative">
-          <Mail className="absolute left-4 top-3 text-zinc-500 h-5 w-5" />
-          <input
-            type="email"
-            placeholder="Your Email"
-            required
-            className="w-full bg-white/5 pl-12 py-3 border border-white/10 rounded-lg 
-                       text-sm placeholder:text-zinc-500 focus:border-primary outline-none transition"
-          />
-        </div>
+      <p className="text-zinc-400 mb-10">
+        Fill the form — Your message will be delivered to my email inbox.
+      </p>
 
-        {/* Message */}
-        <div className="relative">
-          <MessageSquare className="absolute left-4 top-3 text-zinc-500 h-5 w-5" />
-          <textarea
-            rows={5}
-            placeholder="Write your message..."
-            required
-            className="w-full bg-white/5 pl-12 py-3 border border-white/10 rounded-lg
-                       text-sm placeholder:text-zinc-500 focus:border-primary outline-none transition"
-          ></textarea>
-        </div>
+      <motion.form
+        onSubmit={sendEmail}
+        className="glass rounded-3xl p-6 space-y-4"
+      >
+        <input name="name" type="text" placeholder="Your Name" required className="input-field" />
+        <input name="email" type="email" placeholder="Your Email" required className="input-field" />
+        <textarea name="message" rows="5" placeholder="Your Message..." required className="input-field" />
 
-        {/* Submit */}
-        <motion.button
-          whileHover={{ scale: 1.03 }}
-          whileTap={{ scale: 0.97 }}
+        <button
           type="submit"
-          className="w-full rounded-lg bg-primary text-black font-semibold py-3 text-sm shadow-[0_0_20px_#00eaff50] hover:shadow-[0_0_35px_#00eaff80] transition"
+          className="w-full rounded-xl bg-primary text-black font-semibold py-3 hover:bg-primary/80 transition"
         >
           Send Message 🚀
-        </motion.button>
+        </button>
 
-        {status && (
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="text-center text-emerald-400 text-sm mt-2"
-          >
-            {status}
-          </motion.p>
-        )}
+        {status && <p className="text-sm mt-2 text-emerald-400">{status}</p>}
       </motion.form>
-    </main>
+    </section>
   );
 }
