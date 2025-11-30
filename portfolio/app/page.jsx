@@ -5,6 +5,7 @@ import FloatingSkills from "@/components/FloatingSkills";
 import Image from "next/image";
 import RippleButton from "@/components/RippleButton";
 import Timeline from "@/components/Timeline";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -39,16 +40,20 @@ export default function Home() {
 
           {/* ACTION BUTTONS */}
           <motion.div className="mt-10 flex gap-6 relative z-[5]">
-            <RippleButton className="px-10 py-3 rounded-full bg-[#00eaff] text-black 
-              font-semibold shadow-[0_0_20px_#00eaff80] hover:shadow-[0_0_40px_#00eaff] 
-              transition-all">
-              View Projects 🚀
-            </RippleButton>
+            <Link href="/projects">
+                <RippleButton className="px-10 py-3 rounded-full bg-[#00eaff] text-black 
+                font-semibold shadow-[0_0_20px_#00eaff80] hover:shadow-[0_0_40px_#00eaff] 
+                transition-all">
+                View Projects 🚀
+                </RippleButton>
+            </Link>
 
-            <RippleButton className="px-10 py-3 rounded-full border border-white/40 
-              hover:bg-white/10 transition text-white">
-              Say hello 👋
-            </RippleButton>
+            <Link href="/contact">
+                <RippleButton className="px-10 py-3 rounded-full border border-white/40 
+                hover:bg-white/10 transition text-white">
+                Say hello 👋
+                </RippleButton>
+            </Link>
           </motion.div>
         </div>
 
