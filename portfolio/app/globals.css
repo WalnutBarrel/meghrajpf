@@ -1,0 +1,65 @@
+/* ----------------------------------------------
+   TAILWIND BASE IMPORT
+---------------------------------------------- */
+@import "tailwindcss";
+
+/* ----------------------------------------------
+   GLOBAL FONTS (linked to layout.jsx imports)
+---------------------------------------------- */
+:root {
+  --font-sora: "Sora", sans-serif;
+  --font-inter: "Inter", sans-serif;
+}
+
+body {
+  @apply text-white antialiased;
+  font-family: var(--font-sora);
+  background: #000;
+}
+
+/* ----------------------------------------------
+   GLASS UI COMPONENT
+---------------------------------------------- */
+.glass {
+  @apply bg-white/10 backdrop-blur-xl border border-white/10;
+  box-shadow: 0 0 25px rgba(255,255,255,0.04);
+}
+
+/* ----------------------------------------------
+   MAIN BACKGROUND GLOW
+---------------------------------------------- */
+.bg-main {
+  background: radial-gradient(circle at top, #020617 0%, #020617 38%, #000 100%);
+}
+
+/* ----------------------------------------------
+   NEON BUTTON FIX 
+   No darkness overlay, clean glow
+---------------------------------------------- */
+.neon-btn {
+  background: linear-gradient(90deg,#00eaff,#00c4ff);
+  color: #000;
+  box-shadow: 0 0 22px rgba(0,238,255,.8);
+  transition: .25s;
+}
+
+.neon-btn:hover {
+  box-shadow: 0 0 35px rgba(0,238,255,1);
+  transform: scale(1.05);
+}
+
+/* ----------------------------------------------
+   RIPPLE CLICK ANIMATION
+---------------------------------------------- */
+.ripple {
+  position:absolute;
+  border-radius:50%;
+  background:rgba(255,255,255,0.6);
+  transform:scale(0);
+  animation:ripple-effect .6s ease-out forwards;
+  pointer-events:none;
+}
+
+@keyframes ripple-effect {
+  to { transform:scale(3); opacity:0; }
+}
