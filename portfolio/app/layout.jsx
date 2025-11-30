@@ -19,10 +19,18 @@ const inter = Inter({
 
 /* -------------------- Page Metadata -------------------- */
 export const metadata = {
-  title: "Meghrajsinh J Solanki | Portfolio",
-  description: "Interactive Premium Portfolio Built With Next.js + Framer Motion",
-  icons: "/favicon.ico",
+  title: "Meghrajsinh J Solanki | Developer Portfolio",
+  description: "Full-Stack Developer skilled in Next.js, Python, MySQL & Automation",
+  keywords: ["Meghraj", "Portfolio", "Full Stack", "Next.js", "Python"],
+  openGraph: {
+    title: "Meghraj — Full-Stack Developer",
+    description: "Smart Projects, Clean UI, Performance",
+    url: "https://meghrajpf.vercel.app",
+    siteName: "Meghraj Portfolio",
+    images: [{ url: "/og-image.png" }],
+  }
 };
+
 
 /* -------------------- Layout Wrapper -------------------- */
 export default function RootLayout({ children }) {
