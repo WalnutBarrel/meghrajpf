@@ -4,6 +4,7 @@ import { Hero } from './components/Hero'
 import { About } from './components/About'
 import { Timeline } from './components/Timeline'
 import { Projects } from './components/Projects'
+import { TechStack } from './components/TechStack'
 import { Stats } from './components/Stats'
 import { DrivesMe } from './components/DrivesMe'
 import { Highlights } from './components/Highlights'
@@ -36,6 +37,7 @@ function App() {
         <Highlights />
         <Projects />
         <Timeline />
+        <TechStack />
         <Stats />
         <DrivesMe />
         <Contact />
