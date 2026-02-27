@@ -1,6 +1,10 @@
 import { motion } from 'framer-motion'
 import { Briefcase, GraduationCap, Trophy, Laptop, Server } from 'lucide-react'
 
+const Zap = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-zap"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+)
+
 const timelineData = [
   {
     year: "2022 – Present",
@@ -40,10 +44,6 @@ const timelineData = [
     icon: Zap,
   },
 ]
-
-const Zap = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-zap"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-)
 
 export const Timeline = () => {
   return (
