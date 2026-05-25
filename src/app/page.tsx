@@ -38,33 +38,33 @@ export default function Home() {
         {/* Contact Section */}
         <Section id="contact" className="border-t border-border border-b">
           <FadeIn>
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-end min-h-[30vh]">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-end min-h-[25vh]">
               <div className="mb-12 md:mb-0">
-                <h2 className="text-3xl md:text-5xl font-medium tracking-tight mb-6">
+                <h2 className="text-3xl md:text-5xl font-medium tracking-tighter leading-none mb-8">
                   Let&apos;s build something.
                 </h2>
                 <a 
                   href="mailto:hello@example.com" 
-                  className="text-lg md:text-xl text-secondary hover:text-primary transition-colors duration-300 inline-flex items-center group"
+                  className="text-lg md:text-xl text-secondary hover:text-primary transition-colors duration-500 inline-flex items-center group"
                 >
                   hello@example.com
-                  <span className="ml-2 transform group-hover:translate-x-1 transition-transform duration-300">→</span>
+                  <span className="ml-2 transform group-hover:translate-x-1 transition-transform duration-500">→</span>
                 </a>
               </div>
               
-              <div className="flex gap-6 text-sm text-secondary font-medium">
-                <a href="#" className="hover:text-primary transition-colors duration-300">GitHub</a>
-                <a href="#" className="hover:text-primary transition-colors duration-300">Twitter</a>
-                <a href="#" className="hover:text-primary transition-colors duration-300">LinkedIn</a>
+              <div className="flex gap-8 text-sm text-secondary/80 font-medium tracking-tight">
+                <a href="#" className="hover:text-primary transition-colors duration-500">GitHub</a>
+                <a href="#" className="hover:text-primary transition-colors duration-500">Twitter</a>
+                <a href="#" className="hover:text-primary transition-colors duration-500">LinkedIn</a>
               </div>
             </div>
           </FadeIn>
         </Section>
       </main>
 
-      <footer className="py-8 text-center border-t border-border bg-background">
-        <span className="text-xs text-secondary/60 font-mono">
-          © {new Date().getFullYear()} Meghrajpf. All rights reserved.
+      <footer className="py-10 text-center border-t border-border/30 bg-background">
+        <span className="text-xs text-secondary/40 font-mono tracking-tight">
+          © {new Date().getFullYear()} Meghraj Solanki
         </span>
       </footer>
     </>

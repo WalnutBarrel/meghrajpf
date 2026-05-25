@@ -1,66 +1,142 @@
-import { Section } from '../layout/Section';
+import { Container } from '../ui/Container';
 import { FadeIn } from '../ui/FadeIn';
+
+/* ─────────────────────────────────────────────
+   Tenets — the numbered principles
+   ───────────────────────────────────────────── */
+
+const tenets = [
+  {
+    number: '01',
+    title: 'Solve the operation, not the interface.',
+    body: 'The most valuable software disappears into the workflow it serves. If the system demands attention, the design has failed. The goal is operational transparency — software that runs so reliably it becomes invisible to the people who depend on it.',
+  },
+  {
+    number: '02',
+    title: 'Maintainability is the only real feature.',
+    body: 'Complexity is easy to introduce and nearly impossible to remove. Every architectural decision should be evaluated not by what it enables today, but by what it costs to change in eighteen months. Code that cannot be reasoned about by a stranger is a liability, not an asset.',
+  },
+  {
+    number: '03',
+    title: 'Consistency compounds. Cleverness decays.',
+    body: 'Reliable output comes from reliable systems, not from talent applied sporadically. Strict naming conventions, predictable module boundaries, and disciplined commit histories are not bureaucratic overhead — they are the foundation that allows a codebase to scale without entropy.',
+  },
+  {
+    number: '04',
+    title: 'Design for the operator, not the demo.',
+    body: 'The person who uses your software every day is not the person who approved the budget for it. Real-world systems must account for edge cases, partial failures, and human error — not just the golden path that looks compelling in a presentation.',
+  },
+];
 
 export function Philosophy() {
   return (
-    <Section id="philosophy" className="border-t border-border bg-surface/30">
-      <FadeIn>
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
-          {/* Left Column: Title and Principles */}
-          <div className="lg:col-span-4 flex flex-col justify-between">
-            <div className="sticky top-32">
-              <h2 className="text-3xl md:text-4xl font-medium tracking-tight mb-8">
-                Engineering<br className="hidden lg:block" /> Philosophy
+    <section
+      id="philosophy"
+      className="border-t border-border bg-grid-texture py-32 md:py-48 lg:py-56"
+    >
+      <Container>
+        {/* ── Section header ── */}
+        <FadeIn>
+          <div className="mb-24 md:mb-32 lg:mb-40">
+            <div className="flex items-baseline justify-between mb-16 md:mb-20">
+              <h2 className="text-3xl md:text-4xl font-medium tracking-tighter leading-tight">
+                Engineering
+                <br className="hidden md:block" />
+                Philosophy
               </h2>
-              <ul className="text-sm font-mono text-secondary tracking-tight space-y-3">
-                <li className="flex items-start">
-                  <span className="text-primary/40 mr-4">01</span>
-                  <span>Principles over trends.</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-primary/40 mr-4">02</span>
-                  <span>Systems over features.</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-primary/40 mr-4">03</span>
-                  <span>Clarity over cleverness.</span>
-                </li>
-              </ul>
+              <span className="text-[10px] font-mono text-primary/20 tracking-[0.15em] uppercase hidden sm:inline">
+                Principles
+              </span>
             </div>
-          </div>
-          
-          {/* Right Column: Editorial Text Blocks */}
-          <div className="lg:col-span-8 flex flex-col gap-16 md:gap-24 lg:pt-2">
-            {/* Main Statement */}
-            <div>
-              <h3 className="text-2xl md:text-3xl font-medium tracking-tight text-primary mb-6 leading-[1.3] max-w-3xl">
-                Real-world problem solving requires a disciplined disregard for the hype cycle. The most robust systems are often built on the most boring foundations.
-              </h3>
-              <p className="text-lg text-secondary leading-relaxed max-w-2xl">
-                From civic infrastructure to high-throughput enterprise platforms, my focus remains on building resilient software that solves actual constraints. I view engineering not as the mere application of new technologies, but as the rigorous process of finding the simplest viable solution to complex operational challenges.
+
+            {/* ── Lead statement — the manifesto opening ── */}
+            <div className="max-w-3xl">
+              <p className="text-xl md:text-2xl lg:text-[1.65rem] font-medium text-primary/90 leading-[1.45] tracking-tight">
+                Good engineering is often invisible. The most robust systems
+                are built on the most boring foundations — disciplined
+                abstractions, predictable boundaries, and a deliberate
+                resistance to unnecessary complexity.
               </p>
             </div>
-            
-            <div className="border-t border-border/50 pt-16 md:pt-24 grid grid-cols-1 sm:grid-cols-2 gap-12 sm:gap-16">
-              {/* Block 1 */}
-              <div className="flex flex-col gap-5">
-                <h4 className="text-base font-medium text-primary tracking-tight">Long-Term Thinking</h4>
-                <p className="text-base text-secondary leading-relaxed">
-                  Software is an asset only when it is maintainable. I prioritize architectural decisions that compound over time, favoring strict consistency and clear boundaries over short-term velocity. The goal is always to build systems that developers can reason about years after they are written.
+          </div>
+        </FadeIn>
+
+        {/* ── Divider ── */}
+        <div className="border-t border-white/[0.03] mb-20 md:mb-24" />
+
+        {/* ── Extended essay block ── */}
+        <FadeIn>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 mb-24 md:mb-32 lg:mb-40">
+            <div className="lg:col-span-4">
+              <span className="text-[10px] font-mono text-primary/20 tracking-[0.15em] uppercase">
+                Perspective
+              </span>
+            </div>
+            <div className="lg:col-span-7 lg:col-start-6">
+              <div className="flex flex-col gap-7 max-w-xl">
+                <p className="text-sm md:text-[15px] text-secondary/80 leading-[1.8]">
+                  I approach software as operational infrastructure — not as a
+                  product to be shipped, but as a system to be sustained. The
+                  distinction matters. Products optimize for launch. Systems
+                  optimize for the years that follow.
                 </p>
-              </div>
-              
-              {/* Block 2 */}
-              <div className="flex flex-col gap-5">
-                <h4 className="text-base font-medium text-primary tracking-tight">Pragmatic Scalability</h4>
-                <p className="text-base text-secondary leading-relaxed">
-                  Scalability is not solely about handling traffic spikes; it’s about organizational and operational endurance. I design systems that scale mechanically with load, but more importantly, scale gracefully as business logic evolves and engineering teams expand.
+                <p className="text-sm md:text-[15px] text-secondary/80 leading-[1.8]">
+                  This means choosing mature tooling over fashionable tooling.
+                  It means writing documentation before writing abstractions.
+                  It means designing for the team that will inherit your code,
+                  not the audience that will evaluate your portfolio.
+                </p>
+                <p className="text-sm md:text-[15px] text-secondary/70 leading-[1.8]">
+                  Real-world software operates under constraints that tutorials
+                  never mention — intermittent connectivity, administrative
+                  hierarchies, operators who are not developers, and requirements
+                  that change faster than release cycles. Building for these
+                  conditions requires patience, not ambition.
                 </p>
               </div>
             </div>
           </div>
+        </FadeIn>
+
+        {/* ── Divider ── */}
+        <div className="border-t border-white/[0.03] mb-20 md:mb-24" />
+
+        {/* ── Tenets ── */}
+        <div className="flex flex-col gap-0">
+          {tenets.map((tenet, index) => (
+            <FadeIn key={tenet.number} delay={index * 80}>
+              <article
+                className={`grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-20 py-14 md:py-16 ${
+                  index < tenets.length - 1
+                    ? 'border-b border-white/[0.03]'
+                    : ''
+                }`}
+              >
+                {/* Number */}
+                <div className="lg:col-span-1">
+                  <span className="text-[10px] font-mono text-primary/15 tracking-[0.15em]">
+                    {tenet.number}
+                  </span>
+                </div>
+
+                {/* Title */}
+                <div className="lg:col-span-4">
+                  <h3 className="text-base md:text-lg font-medium text-primary/90 tracking-tight leading-snug">
+                    {tenet.title}
+                  </h3>
+                </div>
+
+                {/* Body */}
+                <div className="lg:col-span-6 lg:col-start-7">
+                  <p className="text-sm text-secondary/70 leading-[1.8] max-w-lg">
+                    {tenet.body}
+                  </p>
+                </div>
+              </article>
+            </FadeIn>
+          ))}
         </div>
-      </FadeIn>
-    </Section>
+      </Container>
+    </section>
   );
 }

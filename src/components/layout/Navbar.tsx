@@ -21,9 +21,9 @@ export function Navbar() {
 
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 border-b ${
+      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-700 border-b ${
         scrolled 
-          ? 'bg-background/80 backdrop-blur-md border-border/50' 
+          ? 'bg-background/40 backdrop-blur-xl border-border/20' 
           : 'bg-transparent border-transparent'
       }`}
     >
@@ -31,22 +31,22 @@ export function Navbar() {
         <nav className="flex items-center justify-between h-14 md:h-16">
           <Link 
             href="/" 
-            className="text-primary font-medium tracking-tight text-sm hover:opacity-70 transition-opacity duration-300"
+            className="text-primary font-medium tracking-tight text-sm hover:opacity-80 transition-opacity duration-500"
           >
             Meghrajpf.
           </Link>
           
-          <div className="absolute left-1/2 -translate-x-1/2 hidden md:flex items-center space-x-8 text-sm font-medium text-secondary">
-            <Link href="#work" className="hover:text-primary transition-colors duration-300">
+          <div className="absolute left-1/2 -translate-x-1/2 hidden md:flex items-center space-x-8 text-sm font-medium text-secondary tracking-tight">
+            <Link href="#work" className="hover:text-primary transition-colors duration-500">
               Work
             </Link>
-            <Link href="#philosophy" className="hover:text-primary transition-colors duration-300">
+            <Link href="#philosophy" className="hover:text-primary transition-colors duration-500">
               Philosophy
             </Link>
-            <Link href="#notes" className="hover:text-primary transition-colors duration-300">
+            <Link href="#notes" className="hover:text-primary transition-colors duration-500">
               Notes
             </Link>
-            <Link href="#contact" className="hover:text-primary transition-colors duration-300">
+            <Link href="#contact" className="hover:text-primary transition-colors duration-500">
               Contact
             </Link>
           </div>
